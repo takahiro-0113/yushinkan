@@ -11,7 +11,12 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">合気道道場</div>
-            <ul class="nav-menu">
+            <button class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="#intro" class="nav-link active">はじめに</a></li>
                 <li><a href="#classes" class="nav-link">クラス紹介</a></li>
                 <li><a href="#schedule" class="nav-link">稽古スケジュール</a></li>
@@ -24,16 +29,14 @@
     <!-- イメージスライダー -->
     <div class="slider-container">
         <div class="slider">
-            <img src="https://via.placeholder.com/1200x400/2c3e50/ffffff?text=合気道+稽古風景+1" alt="稽古風景1" class="slide">
-            <img src="https://via.placeholder.com/1200x400/34495e/ffffff?text=合気道+稽古風景+2" alt="稽古風景2" class="slide">
-            <img src="https://via.placeholder.com/1200x400/7f8c8d/ffffff?text=合気道+稽古風景+3" alt="稽古風景3" class="slide">
-            <img src="https://via.placeholder.com/1200x400/95a5a6/ffffff?text=合気道+稽古風景+4" alt="稽古風景4" class="slide">
+            <img src="001.png" alt="合気道稽古風景1" class="slide">
+            <img src="002.png" alt="合気道稽古風景2" class="slide">
+            <img src="003.png" alt="合気道稽古風景3" class="slide">
         </div>
         <div class="slider-controls">
             <span class="dot" data-index="0" onclick="currentSlide(1)"></span>
             <span class="dot" data-index="1" onclick="currentSlide(2)"></span>
             <span class="dot" data-index="2" onclick="currentSlide(3)"></span>
-            <span class="dot" data-index="3" onclick="currentSlide(4)"></span>
         </div>
     </div>
 

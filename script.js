@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     startAutoSlide();
     setupSmoothScroll();
     setupNavLinkTracking();
+    setupMobileMenu();
 });
 
 // スライドを表示する関数
@@ -101,23 +102,41 @@ function setupNavLinkTracking() {
     });
 }
 
-// ========== フォーム送信処理 ==========
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('.contact-form');
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+// ========== モバイルメニュー機能 ==========
+function setupMobileMenu() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
 
-            if (name && email && message) {
-                alert(`ご送信ありがとうございます。\n\nお名前: ${name}\nメール: ${email}\n\nお問い合わせ内容を確認いたします。`);
-                form.reset();
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            
+            // ハンバーガーアイコンのアニメーション
+            const spans = menuToggle.querySelectorAll('span');
+            if (navMenu.classList.contains('active')) {
+                // クロスアイコンに変更
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
             } else {
-                alert('すべてのフィールドを入力してください。');
+                // 元に戻す
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
             }
         });
+
+        // メニュー項目クリック時にメニューを閉じる
+        const navLinks = navMenu.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                // ハンバーガーアイコンも元に戻す
+                const spans = menuToggle.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            });
+        });
     }
-});
+}
