@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>合気道道場 - 武道の心を学ぶ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ナビゲーションメニュー -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">合気道道場</div>
+            <ul class="nav-menu">
+                <li><a href="#intro" class="nav-link active">はじめに</a></li>
+                <li><a href="#classes" class="nav-link">クラス紹介</a></li>
+                <li><a href="#schedule" class="nav-link">稽古スケジュール</a></li>
+                <li><a href="#fees" class="nav-link">会費について</a></li>
+                <li><a href="#contact" class="nav-link">お問い合わせ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- イメージスライダー -->
+    <div class="slider-container">
+        <div class="slider">
+            <img src="https://via.placeholder.com/1200x400/2c3e50/ffffff?text=合気道+稽古風景+1" alt="稽古風景1" class="slide">
+            <img src="https://via.placeholder.com/1200x400/34495e/ffffff?text=合気道+稽古風景+2" alt="稽古風景2" class="slide">
+            <img src="https://via.placeholder.com/1200x400/7f8c8d/ffffff?text=合気道+稽古風景+3" alt="稽古風景3" class="slide">
+            <img src="https://via.placeholder.com/1200x400/95a5a6/ffffff?text=合気道+稽古風景+4" alt="稽古風景4" class="slide">
+        </div>
+        <div class="slider-controls">
+            <span class="dot" data-index="0" onclick="currentSlide(1)"></span>
+            <span class="dot" data-index="1" onclick="currentSlide(2)"></span>
+            <span class="dot" data-index="2" onclick="currentSlide(3)"></span>
+            <span class="dot" data-index="3" onclick="currentSlide(4)"></span>
+        </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <main>
+        <!-- はじめに -->
+        <section id="intro" class="content-section">
+            <h2>はじめに</h2>
+            <p>
+                合気道道場へようこそ。私たちの道場では、合気道の技術だけでなく、
+                武道の精神と心身の成長を大切にしています。
+                初心者から上級者まで、すべてのレベルの方々が学べる環境を整えています。
+            </p>
+            <p>
+                和の心を大切にしながら、自分のペースで技を磨き、
+                仲間たちと共に成長していける場所です。
+            </p>
+        </section>
+
+        <!-- クラス紹介 -->
+        <section id="classes" class="content-section">
+            <h2>クラス紹介</h2>
+            <div class="classes-grid">
+                <div class="class-card">
+                    <h3>キッズクラス</h3>
+                    <p>対象年齢：5～10歳</p>
+                    <p>基本動作と礼儀を学びながら、楽しく合気道の基礎を身につけます。</p>
+                </div>
+                <div class="class-card">
+                    <h3>一般初級クラス</h3>
+                    <p>対象：初心者</p>
+                    <p>基本技と体の使い方を丁寧に指導します。個人のペースに合わせたレッスン。</p>
+                </div>
+                <div class="class-card">
+                    <h3>一般中級クラス</h3>
+                    <p>対象：経験者</p>
+                    <p>より深い技術と応用を学びます。自分の力を高めたい方向けです。</p>
+                </div>
+                <div class="class-card">
+                    <h3>上級・段位クラス</h3>
+                    <p>対象：段位取得者</p>
+                    <p>高度な技術と教えるスキルを磨きます。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 稽古スケジュール -->
+        <section id="schedule" class="content-section">
+            <h2>稽古スケジュール</h2>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>曜日</th>
+                        <th>時間</th>
+                        <th>クラス</th>
+                        <th>対象者</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>月・水</td>
+                        <td>19:00～20:30</td>
+                        <td>一般初級</td>
+                        <td>初心者</td>
+                    </tr>
+                    <tr>
+                        <td>月・水</td>
+                        <td>20:30～22:00</td>
+                        <td>一般中級</td>
+                        <td>経験者</td>
+                    </tr>
+                    <tr>
+                        <td>木</td>
+                        <td>18:00～19:00</td>
+                        <td>キッズ</td>
+                        <td>5～10歳</td>
+                    </tr>
+                    <tr>
+                        <td>金</td>
+                        <td>19:00～20:30</td>
+                        <td>一般</td>
+                        <td>全員</td>
+                    </tr>
+                    <tr>
+                        <td>土</td>
+                        <td>10:00～11:30</td>
+                        <td>一般</td>
+                        <td>全員</td>
+                    </tr>
+                    <tr>
+                        <td>日</td>
+                        <td>15:00～16:30</td>
+                        <td>上級・段位</td>
+                        <td>段位取得者</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 会費について -->
+        <section id="fees" class="content-section">
+            <h2>会費について</h2>
+            <div class="fees-grid">
+                <div class="fee-card">
+                    <h3>体験稽古</h3>
+                    <p class="price">1回 1,000円</p>
+                    <p>最初は体験稽古で道場の雰囲気を感じてください。</p>
+                </div>
+                <div class="fee-card">
+                    <h3>月会費（月4回）</h3>
+                    <p class="price">6,000円</p>
+                    <p>初級者向けプラン</p>
+                </div>
+                <div class="fee-card">
+                    <h3>月会費（無制限）</h3>
+                    <p class="price">10,000円</p>
+                    <p>全クラス受講可能な通い放題プラン</p>
+                </div>
+                <div class="fee-card">
+                    <h3>入会金</h3>
+                    <p class="price">5,000円</p>
+                    <p>初回入会時のみ必要です</p>
+                </div>
+            </div>
+            <p class="fees-note">※ 表示価格は税込みです。詳しくはお問い合わせください。</p>
+        </section>
+
+        <!-- お問い合わせ -->
+        <section id="contact" class="content-section">
+            <h2>お問い合わせ</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>住所</h3>
+                    <p>〒150-0001 東京都渋谷区神宮前 1-2-3</p>
+                </div>
+                <div class="contact-item">
+                    <h3>電話</h3>
+                    <p>03-XXXX-XXXX</p>
+                </div>
+                <div class="contact-item">
+                    <h3>メール</h3>
+                    <p>info@aikido-dojo.jp</p>
+                </div>
+                <div class="contact-item">
+                    <h3>営業時間</h3>
+                    <p>月～日：14:00～22:00</p>
+                </div>
+            </div>
+
+            <form class="contact-form">
+                <h3>問い合わせフォーム</h3>
+                <div class="form-group">
+                    <label for="name">お名前</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">メールアドレス</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">メッセージ</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">送信</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <p>&copy; 2026 合気道道場. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
