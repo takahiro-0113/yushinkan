@@ -507,7 +507,15 @@ main {
         flex-direction: row;
         align-items: center;
         gap: 1rem;
-        padding: 1rem;
+        padding: 0.7rem;
+    }
+
+    .logo-main {
+        font-size: 2.25rem;
+    }
+
+    .menu-toggle span {
+        background-color: #22c55e;
     }
 
     .menu-toggle {
