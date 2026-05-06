@@ -14,12 +14,12 @@ body {
 
 /* ========== ナビゲーションバー ========== */
 .navbar {
-    background-color: #0f5132;
+    background-color: white;
     padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
 }
 
 .nav-container {
@@ -32,10 +32,21 @@ body {
 }
 
 .logo {
+    font-family: 'Yu Mincho', 'Hiragino Mincho Pro', '游明朝', serif;
+    color: black;
+    line-height: 1.1;
+}
+
+.logo-sub {
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    opacity: 0.8;
+}
+
+.logo-main {
+    font-family: 'Yu Gyosho', 'HGP行書体', 'KaiGenGothic-Medium', serif;
     font-size: 1.5rem;
     font-weight: bold;
-    color: white;
-    letter-spacing: 2px;
 }
 
 .menu-toggle {
@@ -50,7 +61,7 @@ body {
 .menu-toggle span {
     width: 25px;
     height: 3px;
-    background-color: white;
+    background-color: #b7e0b2;
     margin: 3px 0;
     transition: 0.3s;
     border-radius: 2px;
@@ -63,7 +74,7 @@ body {
 }
 
 .nav-link {
-    color: white;
+    color: black;
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.3s ease;
@@ -75,6 +86,45 @@ body {
 .nav-link.active {
     color: #22c55e;
     border-bottom-color: #22c55e;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 0.75rem 0;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    min-width: 220px;
+    z-index: 20;
+}
+
+.sub-menu li {
+    padding: 0;
+}
+
+.sub-menu a {
+    display: block;
+    padding: 0.6rem 1rem;
+    color: #333;
+    white-space: nowrap;
+}
+
+.sub-menu a:hover {
+    background-color: #f0fdf4;
+    color: #166534;
+}
+
+.has-submenu:hover > .sub-menu {
+    display: flex;
+    flex-direction: column;
 }
 
 /* ========== スライダー ========== */
@@ -89,7 +139,7 @@ body {
     display: flex;
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 280px;
 }
 
 .slide {
@@ -171,6 +221,86 @@ main {
     color: #555;
     margin-bottom: 1rem;
     text-align: justify;
+}
+
+.news-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.news-list li {
+    padding: 0.8rem 1rem;
+    border-left: 4px solid #22c55e;
+    background-color: #f7fffa;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.map-container {
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+    display: block;
+}
+
+.simple-links {
+    background-color: #0f5132;
+    color: rgba(255, 255, 255, 0.85);
+    box-shadow: none;
+    border-radius: 0;
+    padding: 2rem;
+    margin: 0;
+    width: 100%;
+}
+
+.simple-links .news-list {
+    margin: 0;
+    padding: 0 2rem;
+}
+
+.simple-links .news-list li {
+    border-left: none;
+    background-color: transparent;
+    padding: 0.75rem 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.simple-links .news-list li:last-child {
+    border-bottom: none;
+}
+
+.simple-links .news-list li a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.simple-links .news-list li a:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    font-family: 'Yu Mincho', 'Hiragino Mincho Pro', '游明朝', serif;
+    color: black;
+    line-height: 1.1;
+    text-decoration: none;
+}
+
+.logo-sub,
+.logo-main {
+    color: black;
+}
+
+.news-list li strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #166534;
 }
 
 /* ========== クラス紹介グリッド ========== */
@@ -374,7 +504,8 @@ main {
 /* ========== レスポンシブデザイン ========== */
 @media (max-width: 768px) {
     .nav-container {
-        flex-direction: column;
+        flex-direction: row;
+        align-items: center;
         gap: 1rem;
         padding: 1rem;
     }
@@ -389,13 +520,13 @@ main {
         flex-direction: column;
         gap: 0.5rem;
         width: 100%;
-        background-color: #0f5132;
+        background-color: white;
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
         padding: 1rem;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.15);
     }
 
     .nav-menu.active {
@@ -405,16 +536,33 @@ main {
     .nav-link {
         display: block;
         padding: 0.75rem;
-        text-align: center;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
+        text-align: left;
+        color: black;
+        border-bottom: 1px solid rgba(0,0,0,0.08);
     }
 
     .nav-link:last-child {
         border-bottom: none;
     }
 
+    .nav-menu .sub-menu {
+        display: block;
+        position: static;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        background: transparent;
+        min-width: auto;
+    }
+
+    .nav-menu .sub-menu a {
+        padding-left: 1.5rem;
+        background: transparent;
+        border: none;
+    }
+
     .slider {
-        height: 300px;
+        height: 210px;
     }
 
     .content-section {

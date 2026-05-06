@@ -4,8 +4,11 @@ let slideTimer;
 
 // ページ読み込み時の初期化
 document.addEventListener('DOMContentLoaded', function() {
-    showSlides(slideIndex);
-    startAutoSlide();
+    const slides = document.querySelectorAll('.slide');
+    if (slides.length > 0) {
+        showSlides(slideIndex);
+        startAutoSlide();
+    }
     setupSmoothScroll();
     setupNavLinkTracking();
     setupMobileMenu();
@@ -15,6 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
 function showSlides(n) {
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
+    if (slides.length === 0 || dots.length === 0) {
+        return;
+    }
 
     if (n > slides.length) {
         slideIndex = 1;
@@ -36,6 +42,10 @@ function showSlides(n) {
 
 // 特定のスライドに移動
 function currentSlide(n) {
+    const slides = document.querySelectorAll('.slide');
+    if (slides.length === 0) {
+        return;
+    }
     clearTimeout(slideTimer);
     slideIndex = n;
     showSlides(slideIndex);
@@ -44,6 +54,10 @@ function currentSlide(n) {
 
 // 次/前のスライドに移動
 function changeSlide(n) {
+    const slides = document.querySelectorAll('.slide');
+    if (slides.length === 0) {
+        return;
+    }
     clearTimeout(slideTimer);
     slideIndex += n;
     showSlides(slideIndex);
@@ -127,7 +141,7 @@ function setupMobileMenu() {
         });
 
         // メニュー項目クリック時にメニューを閉じる
-        const navLinks = navMenu.querySelectorAll('.nav-link');
+        const navLinks = navMenu.querySelectorAll('a');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
                 navMenu.classList.remove('active');

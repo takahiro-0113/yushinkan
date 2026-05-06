@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ - 〇〇館道場</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-sub">○○○○合氣道会</div>
+                <div class="logo-main">〇〇館道場</div>
+            </div>
+            <button class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item has-submenu">
+                    <a href="intro.html" class="nav-link">はじめての方へ</a>
+                    <ul class="sub-menu">
+                        <li><a href="intro.html#greeting">ご挨拶</a></li>
+                        <li><a href="intro.html#dojo-about">○○館道場について</a></li>
+                        <li><a href="intro.html#what-is">心身統一合氣道とは</a></li>
+                    </ul>
+                </li>
+                <li><a href="classes.html" class="nav-link">クラス紹介</a></li>
+                <li><a href="schedule.html" class="nav-link">稽古スケジュール</a></li>
+                <li><a href="fees.html" class="nav-link">会費について</a></li>
+                <li><a href="contact.html" class="nav-link active">お問い合わせ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="content-section">
+            <h2>お問い合わせ</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>住所</h3>
+                    <p>〒150-0001 東京都渋谷区神宮前 1-2-3</p>
+                </div>
+                <div class="contact-item">
+                    <h3>電話</h3>
+                    <p>03-XXXX-XXXX</p>
+                </div>
+                <div class="contact-item">
+                    <h3>メール</h3>
+                    <p>info@aikido-dojo.jp</p>
+                </div>
+                <div class="contact-item">
+                    <h3>営業時間</h3>
+                    <p>月～日：14:00～22:00</p>
+                </div>
+            </div>
+
+            <form class="contact-form">
+                <h3>問い合わせフォーム</h3>
+                <div class="form-group">
+                    <label for="name">お名前</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">メールアドレス</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">メッセージ</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">送信</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 〇〇館道場. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
